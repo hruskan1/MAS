@@ -1,0 +1,115 @@
+['main.py']
+EFG 2 R "" { "p1" "p2" }
+""
+
+p "P: (3, 2)
+ G: 0" 1 1 "" { "up" "left" "right" } 0
+p "Bandit
+(2, 2)" 1 2 "" { "fight" "let_go" } 0
+c "Fight" 1 "" { "player wins" 0.5 "player lose" 0.5 } 0
+p "P: (2, 2)
+ G: 0" 1 3 "" { "up" "left" "right" } 0
+t "Player escapes" 1 "" { 2, -2 }
+p "P: (2, 1)
+ G: 0" 1 4 "" { "up" "down" } 0
+p "P: (1, 1)
+ G: 0" 1 5 "" { "right" } 0
+t "Player escapes" 2 "" { 2, -2 }
+p "P: (3, 1)
+ G: 0" 1 6 "" { "" } 0
+t "Player cannot move" 3 "" { 0, 0 }
+p "P: (2, 3)
+ G: 1" 1 7 "" { "up" "down" } 0
+p "P: (1, 3)
+ G: 1" 1 8 "" { "left" } 0
+t "Player escapes" 4 "" { 3, -3 }
+p "P: (3, 3)
+ G: 1" 1 9 "" { "" } 0
+t "Player cannot move" 5 "" { 0, 0 }
+t "Player dies" 6 "" { 0, 0 }
+p "P: (2, 2)
+ G: 0" 1 10 "" { "up" "left" "right" } 0
+t "Player escapes" 7 "" { 2, -2 }
+p "P: (2, 1)
+ G: 0" 1 11 "" { "up" "down" } 0
+p "P: (1, 1)
+ G: 0" 1 12 "" { "right" } 0
+t "Player escapes" 8 "" { 2, -2 }
+p "P: (3, 1)
+ G: 0" 1 13 "" { "" } 0
+t "Player cannot move" 9 "" { 0, 0 }
+p "P: (2, 3)
+ G: 1" 1 14 "" { "up" "down" } 0
+p "P: (1, 3)
+ G: 1" 1 15 "" { "left" } 0
+t "Player escapes" 10 "" { 3, -3 }
+p "P: (3, 3)
+ G: 1" 1 16 "" { "" } 0
+t "Player cannot move" 11 "" { 0, 0 }
+p "P: (3, 1)
+ G: 0" 1 17 "" { "up" } 0
+p "P: (2, 1)
+ G: 0" 1 18 "" { "up" "right" } 0
+p "P: (1, 1)
+ G: 0" 1 19 "" { "right" } 0
+t "Player escapes" 12 "" { 2, -2 }
+p "Bandit
+(2, 2)" 1 2 "" { "fight" "let_go" } 0
+c "Fight" 2 "" { "player wins" 0.5 "player lose" 0.5 } 0
+p "P: (2, 2)
+ G: 0" 1 20 "" { "up" "right" } 0
+t "Player escapes" 13 "" { 2, -2 }
+p "P: (2, 3)
+ G: 1" 1 21 "" { "up" "down" } 0
+p "P: (1, 3)
+ G: 1" 1 22 "" { "left" } 0
+t "Player escapes" 14 "" { 3, -3 }
+p "P: (3, 3)
+ G: 1" 1 23 "" { "" } 0
+t "Player cannot move" 15 "" { 0, 0 }
+t "Player dies" 16 "" { 0, 0 }
+p "P: (2, 2)
+ G: 0" 1 24 "" { "up" "right" } 0
+t "Player escapes" 17 "" { 2, -2 }
+p "P: (2, 3)
+ G: 1" 1 25 "" { "up" "down" } 0
+p "P: (1, 3)
+ G: 1" 1 26 "" { "left" } 0
+t "Player escapes" 18 "" { 3, -3 }
+p "P: (3, 3)
+ G: 1" 1 27 "" { "" } 0
+t "Player cannot move" 19 "" { 0, 0 }
+p "P: (3, 3)
+ G: 0" 1 28 "" { "up" } 0
+p "P: (2, 3)
+ G: 1" 1 29 "" { "up" "left" } 0
+p "P: (1, 3)
+ G: 1" 1 30 "" { "left" } 0
+t "Player escapes" 20 "" { 3, -3 }
+p "Bandit
+(2, 2)" 1 2 "" { "fight" "let_go" } 0
+c "Fight" 3 "" { "player wins" 0.5 "player lose" 0.5 } 0
+p "P: (2, 2)
+ G: 1" 1 31 "" { "up" "left" } 0
+t "Player escapes" 21 "" { 3, -3 }
+p "P: (2, 1)
+ G: 1" 1 32 "" { "up" "down" } 0
+p "P: (1, 1)
+ G: 1" 1 33 "" { "right" } 0
+t "Player escapes" 22 "" { 3, -3 }
+p "P: (3, 1)
+ G: 1" 1 34 "" { "" } 0
+t "Player cannot move" 23 "" { 0, 0 }
+t "Player dies" 24 "" { 0, 0 }
+p "P: (2, 2)
+ G: 0" 1 35 "" { "up" "left" } 0
+t "Player escapes" 25 "" { 2, -2 }
+p "P: (2, 1)
+ G: 0" 1 36 "" { "up" "down" } 0
+p "P: (1, 1)
+ G: 0" 1 37 "" { "right" } 0
+t "Player escapes" 26 "" { 2, -2 }
+p "P: (3, 1)
+ G: 0" 1 38 "" { "" } 0
+t "Player cannot move" 27 "" { 0, 0 }
+
