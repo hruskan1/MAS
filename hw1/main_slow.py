@@ -54,31 +54,29 @@ def build_player(maze,bandit_cnt:int,bandit_pos:Tuple,prob:float,gold:int=0,hist
     actions = []
     for action,result,grid_pos in get_feasible_actions_with_results(maze):
         actions.append(action)
-        s_mask = maze=='S'
-        maze[s_mask] = '#'
-        maze[grid_pos[0],grid_pos[1]] = 'S'
-    
+        new_maze = maze.copy()
+        new_maze[new_maze=='S'] = '#'
+        new_maze[grid_pos[0],grid_pos[1]] = 'S'
+        
+        
         #print(f"{action=}\t{result=}\t{grid_pos[0],grid_pos[1]}\n{new_maze}")
        
         if result == '-': #can move
-            childrens.append(build_player(maze,bandit_cnt,bandit_pos,prob,gold, history + [action])) 
+            childrens.append(build_player(new_maze,bandit_cnt,bandit_pos,prob,gold, history + [action])) 
         
         elif result == 'E': #Bandit (E mark ereased, but player can not return back)
-            x,y = grid_pos[0],grid_pos[1]
+            x,y = np.nonzero(new_maze=='S')
             
             if (x[0],y[0]) in bandit_pos:
-                childrens.append(build_bandit(maze,bandit_cnt,bandit_pos,prob,gold,history + [action]))
+                childrens.append(build_bandit(new_maze,bandit_cnt,bandit_pos,prob,gold,history + [action]))
             else:
-                childrens.append(build_player(maze,bandit_cnt,bandit_pos,prob,gold, history + [action])) 
+                childrens.append(build_player(new_maze,bandit_cnt,bandit_pos,prob,gold, history + [action])) 
                 
         elif result == 'G':
-            childrens.append(build_player(maze,bandit_cnt,bandit_pos,prob,gold+1,history + [action]))
+            childrens.append(build_player(new_maze,bandit_cnt,bandit_pos,prob,gold+1,history + [action]))
         
         elif result == 'D': #can end
             childrens.append(TerminalNode('Player escapes',[gold+2]))
-        
-        maze[s_mask] = 'S'
-        maze[grid_pos[0],grid_pos[1]] = result
         
     if len(actions) == 0: #no valid move
         childrens.append(TerminalNode('Player cannot move',[0]))
@@ -153,7 +151,7 @@ if __name__ == '__main__':
     root = define_game(maze, bandit_cnt, prob)    
 
     # NOT on BRUTE!
-    # draw_game(root,filename="miners.pdf")
+    #draw_game(root,filename="miners.pdf")
 
     #efg = export_efg.nodes_to_efg(root)
 
