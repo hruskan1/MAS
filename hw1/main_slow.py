@@ -151,13 +151,13 @@ if __name__ == '__main__':
     root = define_game(maze, bandit_cnt, prob)    
 
     # NOT on BRUTE!
-    #draw_game(root,filename="miners.pdf")
+    draw_game(root,filename="game.pdf")
 
-    #efg = export_efg.nodes_to_efg(root)
+    efg = export_efg.nodes_to_efg(root)
 
     # NOT on BRUTE!
     #game_value(efg)
 
     # Print the efg representation.
     # Yes on BRUTE
-    #print(repr(efg)) 
+    print(repr(efg)) 
